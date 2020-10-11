@@ -39,12 +39,12 @@ class Egg extends Widget_Base {
 
 		$vers =  STV_DEV_MODE ? time(): false;
 
+		// STYLES
 		wp_register_style( 'stv-pstyle', plugins_url( '/assets/css/magnific-popup.css', ELEMENTOR_STV ), [], '1.0.0' );
-		
 		
 		wp_register_style( 'stv-movement', plugins_url( '/assets/css/fovea.css', ELEMENTOR_STV ), [], $vers );
 		
-
+		//SCRIPTS
 		wp_enqueue_script( 'stv-popup', plugins_url( '/assets/magnific-popup/jquery.magnific-popup.js', ELEMENTOR_STV ), ['jquery'], $vers);
 	
 		wp_enqueue_script( 'stv-scripts-g', plugins_url( '/assets/js/fovea.js', ELEMENTOR_STV ), ['jquery'], $vers);
@@ -198,6 +198,44 @@ class Egg extends Widget_Base {
 			]
 		);
 
+				
+		$this->add_control(
+			'color_borde1',
+			array(
+				'label'   => __( 'Color Borde 1', 'elementor-stv' ),
+				'type'    => Controls_Manager::COLOR,
+				'default' => '#000000',
+			)
+		);
+
+		$this->add_control(
+			'color_borde2',
+			array(
+				'label'   => __( 'Color Borde 2', 'elementor-stv' ),
+				'type'    => Controls_Manager::COLOR,
+				'default' => '#000000',
+			)
+		);
+
+		$this->add_control(
+			'color_borde3',
+			array(
+				'label'   => __( 'Color Borde 3', 'elementor-stv' ),
+				'type'    => Controls_Manager::COLOR,
+				'default' => '#000000',
+			)
+		);
+
+
+		$this->add_control(
+			'color_fondo',
+			array(
+				'label'   => __( 'Color Fondo', 'elementor-stv' ),
+				'type'    => Controls_Manager::COLOR,
+				'default' => '#000000',
+			)
+		);
+
 		$this->end_controls_section();
 		
 
@@ -218,31 +256,53 @@ class Egg extends Widget_Base {
 		//$this->add_inline_editing_attributes( 'title', 'none' );
 		//$this->add_inline_editing_attributes( 'description', 'basic' );
 		//$this->add_inline_editing_attributes( 'content', 'advanced' );
-		?>
-		<?php 
 		
+		
+		?>
+		
+		<?php
+		
+		$svg = base64_encode('<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 304.92 226.4">
+				<defs>
+					<style>.cls-1{fill:url(#linear-gradient);}</style>
+					<linearGradient id="linear-gradient" y1="113.2" x2="304.92" y2="113.2" gradientUnits="userSpaceOnUse">
+						<stop offset="0" stop-color="'.$settings['color_borde1'].'" stop-opacity="0.68"/>
+						<stop offset="0.19" stop-color="'.$settings['color_borde2'].'"/>
+						<stop offset="1" stop-color="'.$settings['color_borde3'].'" stop-opacity="0.6"/>
+					</linearGradient>
+				</defs>
+				<title>Recurso 1ed</title>
+				<g id="Capa_2" data-name="Capa 2">
+					<g id="Capa_1-2" data-name="Capa 1">
+						<path style="fill: '.$settings['color_fondo'].';" d="M212.76,225.4c-16.16,0-34.15-.16-53.19-.32-20-.18-40.75-.35-60.31-.35-10.65,0-20,.05-28.46.16-.59,0-4.18,0-4.76,0-41.44,1-94.27-38.17-46.43-141C50.73,17.05,126.13,1.38,128.78,1.22c2.47-.15,12-1.11,14.38-1.11,35.43,0,65.92,7.9,90.63,23.49,19.71,12.44,35.85,29.81,48,51.61,20.73,37.3,22.51,75,22.52,75.36v.28a63.09,63.09,0,0,1-15.09,49.81C275.74,216,255,225,232.19,225.3,226.46,225.37,220.11,225.4,212.76,225.4Z"/>
+						<path class="cls-1" d="M143.37,6.11c33.85,0,62.95,7.49,86.49,22.27C248.62,40.15,264,56.62,275.59,77.31c20,35.75,21.81,72.21,21.82,72.56l0,.28,0,.27a58.28,58.28,0,0,1-13.92,46C271,210.7,251.65,219,230.39,219.3c-5.59.07-11.8.1-19,.1-15.78,0-33.36-.15-52-.32-19.6-.16-39.86-.34-59-.34-10.43,0-19.54,0-27.87.16H70.9c-17.47,0-32-3.89-41.94-11.23-7-5.16-9.56-10.35-9.8-10.88L18,195.17c-29.23-40.61,7.23-108.26,7.61-109A160.41,160.41,0,0,1,59.71,42.39a149.75,149.75,0,0,1,36.12-24C117.4,8.21,126.62,7.52,128.22,7.23c2.13-.37,12.84-1.12,15.15-1.12m8.4-6C149.33,0,122-1.77,96.1,11c-24,11.81-53.47,30.74-73.63,67.38-11.62,21.12-38,80.19-10,120.37,0,0,15.17,27,58.47,27.18h1.76c8.83-.11,18.16-.16,27.78-.16,37.05,0,78.32.66,111,.66,6.76,0,13.14,0,19.05-.1,45.44-.55,79-34.34,73.94-76.72,0,0-7.64-134-135-147.93C169.43,1.65,155.38.32,151.77.15Z"/>
+					</g>
+				</g>
+			</svg>');
+
+
 		if ( $settings['action_egg'] === 'gallery' ) {
 			
 			?>
 						
-			<div class="col-xs-12">
-
-				<a class="gallery-item noDecoracion" href="<?php echo wp_kses( $settings['mask_image']['url'], array() ); ?>" title="<?php echo wp_kses( $settings['title'], array() ); ?>">
-					<img class="img-responsive burbuja" src="<?php echo wp_kses( $settings['mask_image']['url'], array() ); ?>" alt="<?php echo wp_kses( $settings['title'], array() ); ?>">
+			<div class="col-xs-12 gallery-stv">
+				
+				<a  class="gallery-item noDecoracion" href="<?php echo wp_kses( $settings['mask_image']['url'], array() ); ?>" title="<?php echo wp_kses( $settings['title'], array() ); ?>">
+					<img style="background-image:url('data:image/svg+xml;base64,<?php echo $svg; ?>');" class="img-responsive burbuja" src="<?php echo wp_kses( $settings['mask_image']['url'], array() ); ?>" alt="<?php echo wp_kses( $settings['title'], array() ); ?>">
 				</a>
 
 			</div>
 
 			<?php
 			
-		}else if ( $settings['action_egg'] === 'video' ) {
+		}else if ( $settings['action_egg'] === 'video' ) {   
 			
 			?>
 						
-			<div class="col-xs-12">
-
+			<div class="col-xs-12 gallery-stv">
+				
 				<a class="gallery-item-video noDecoracion" href="<?php echo wp_kses( $settings['url'], array() ); ?>" title="<?php echo wp_kses( $settings['title'], array() ); ?>">
-					<img class="img-responsive burbuja" src="<?php echo wp_kses( $settings['mask_image']['url'], array() ); ?>" alt="<?php echo wp_kses( $settings['title'], array() ); ?>">
+					<img style="background-image:url('data:image/svg+xml;base64,<?php echo $svg; ?>');" class="img-responsive burbuja" src="<?php echo wp_kses( $settings['mask_image']['url'], array() ); ?>" alt="<?php echo wp_kses( $settings['title'], array() ); ?>">
 				</a>
 
 			</div>
@@ -255,10 +315,10 @@ class Egg extends Widget_Base {
 			
 			?>
 			
-			<div class="col-xs-12">
-
+			<div class="col-xs-12 gallery-stv">
+				
 				<a class="gallery-item noDecoracion" href="<?php echo wp_kses( $settings['url'], array() ); ?>" title="<?php echo wp_kses( $settings['title'], array() ); ?>">
-					<img class="img-responsive burbuja" src="<?php echo wp_kses( $settings['mask_image']['url'], array() ); ?>" alt="<?php echo wp_kses( $settings['title'], array() ); ?>">
+					<img style="background-image:url('data:image/svg+xml;base64,<?php echo $svg; ?>');" class="img-responsive burbuja" src="<?php echo wp_kses( $settings['mask_image']['url'], array() ); ?>" alt="<?php echo wp_kses( $settings['title'], array() ); ?>">
 				</a>
 
 			</div>
@@ -294,32 +354,55 @@ class Egg extends Widget_Base {
 
 
 		<#
+
+		var svg = btoa(`<svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" viewBox=\"0 0 304.92 226.4\">
+				<defs>
+					<style>.cls-1{fill:url(#linear-gradient);}</style>
+					<linearGradient id=\"linear-gradient\" y1=\"113.2\" x2=\"304.92\" y2=\"113.2\" gradientUnits=\"userSpaceOnUse\">
+						<stop offset=\"0\" stop-color=\"${settings.color_borde1}" stop-opacity=\"0.68\"/>
+						<stop offset=\"0.19\" stop-color=\"${settings.color_borde2}"/>
+						<stop offset=\"1\" stop-color=\"${settings.color_borde3}" stop-opacity=\"0.6\"/>
+					</linearGradient>
+				</defs>
+				<title>Recurso 1ed</title>
+				<g id=\"Capa_2\" data-name=\"Capa 2\">
+					<g id=\"Capa_1-2\" data-name=\"Capa 1\">
+						<path style=\"fill: ${settings.color_fondo};\" d=\"M212.76,225.4c-16.16,0-34.15-.16-53.19-.32-20-.18-40.75-.35-60.31-.35-10.65,0-20,.05-28.46.16-.59,0-4.18,0-4.76,0-41.44,1-94.27-38.17-46.43-141C50.73,17.05,126.13,1.38,128.78,1.22c2.47-.15,12-1.11,14.38-1.11,35.43,0,65.92,7.9,90.63,23.49,19.71,12.44,35.85,29.81,48,51.61,20.73,37.3,22.51,75,22.52,75.36v.28a63.09,63.09,0,0,1-15.09,49.81C275.74,216,255,225,232.19,225.3,226.46,225.37,220.11,225.4,212.76,225.4Z\"/>
+						<path class=\"cls-1\" d=\"M143.37,6.11c33.85,0,62.95,7.49,86.49,22.27C248.62,40.15,264,56.62,275.59,77.31c20,35.75,21.81,72.21,21.82,72.56l0,.28,0,.27a58.28,58.28,0,0,1-13.92,46C271,210.7,251.65,219,230.39,219.3c-5.59.07-11.8.1-19,.1-15.78,0-33.36-.15-52-.32-19.6-.16-39.86-.34-59-.34-10.43,0-19.54,0-27.87.16H70.9c-17.47,0-32-3.89-41.94-11.23-7-5.16-9.56-10.35-9.8-10.88L18,195.17c-29.23-40.61,7.23-108.26,7.61-109A160.41,160.41,0,0,1,59.71,42.39a149.75,149.75,0,0,1,36.12-24C117.4,8.21,126.62,7.52,128.22,7.23c2.13-.37,12.84-1.12,15.15-1.12m8.4-6C149.33,0,122-1.77,96.1,11c-24,11.81-53.47,30.74-73.63,67.38-11.62,21.12-38,80.19-10,120.37,0,0,15.17,27,58.47,27.18h1.76c8.83-.11,18.16-.16,27.78-.16,37.05,0,78.32.66,111,.66,6.76,0,13.14,0,19.05-.1,45.44-.55,79-34.34,73.94-76.72,0,0-7.64-134-135-147.93C169.43,1.65,155.38.32,151.77.15Z\"/>
+					</g>
+				</g>
+			</svg>`);
+
+			{{{ settings.color_borde3 }}}
+
 		if ( settings.action_egg === 'gallery' ) {
+
+			
 			#>
-			<div class="col-xs-12">
+			<div class="col-xs-12 gallery-stv">
 
 				<a class="gallery-item noDecoracion" href="{{{ settings.mask_image.url }}}" title="{{{ settings.title }}}">
-					<img class="img-responsive burbuja" src="{{{ settings.mask_image.url }}}" alt="{{{ settings.title }}}">
+					<img style="background-image: url('data:image/svg+xml;base64,{{{ svg }}}'); " class="img-responsive burbuja" src="{{{ settings.mask_image.url }}}" alt="{{{ settings.title }}}">
 				</a>
 
 			</div>
 			<#
 		}else if( settings.action_egg === 'video' ){
 			#>
-			<div class="col-xs-12">
+			<div class="col-xs-12 gallery-stv">
 
 				<a class="gallery-item-video" href="{{{ settings.url }}}" title="{{{ settings.title }}}">
-					<img class="img-responsive burbuja" src="{{{ settings.mask_image.url }}}" alt="{{{ settings.title }}}">
+					<img style="background-image:url('data:image/svg+xml;base64,{{{ svg }}}');" class="img-responsive burbuja" src="{{{ settings.mask_image.url }}}" alt="{{{ settings.title }}}">
 				</a>
            
          	</div>
 			<#
 		}else{
 			#>
-			<div class="col-xs-12">
+			<div class="col-xs-12 gallery-stv">
 
 				<a class="gallery-item noDecoracion" href="{{{ settings.url }}}" title="{{{ settings.title }}}">
-					<img class="img-responsive burbuja" src="{{{ settings.mask_image.url }}}" alt="{{{ settings.title }}}">
+					<img style="background-image:url('data:image/svg+xml;base64,{{{ svg }}}');" class="img-responsive burbuja" src="{{{ settings.mask_image.url }}}" alt="{{{ settings.title }}}">
 				</a>
 
 			</div>
