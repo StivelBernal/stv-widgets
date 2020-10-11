@@ -41,7 +41,9 @@ class Egg extends Widget_Base {
 
 		wp_register_style( 'stv-movement', plugins_url( '/assets/css/stv-movement.css', ELEMENTOR_STV ), [], $vers );
 		
-		wp_enqueue_script( 'stv-scripts', plugins_url( '/assets/js/fovea.js', ELEMENTOR_STV ), [], $vers, true);
+		wp_enqueue_script( 'stv-popup', plugins_url( '/assets/magnific-popup/jquery.magnific-popup.js', ELEMENTOR_STV ), ['jquery'], $vers);
+	
+		wp_enqueue_script( 'stv-scripts-g', plugins_url( '/assets/js/fovea.js', ELEMENTOR_STV ), ['jquery'], $vers);
 		
 	}
 
@@ -122,22 +124,79 @@ class Egg extends Widget_Base {
 		$this->start_controls_section(
 			'section_content',
 			array(
-				'label' => __( 'Content', 'elementor-stv' ),
+				'label' => __( 'Contenido', 'elementor-stv' ),
 			)
 		);
 
+		
+		$this->add_control(
+			'title',
+			array(
+				'label'   => __( 'Titulo', 'elementor-stv' ),
+				'type'    => Controls_Manager::TEXT,
+				'default' => 'Titulo',
+			)
+		);
+
+		$this->add_control(
+			'url',
+			array(
+				'label'   => __( 'Url', 'elementor-stv' ),
+				'type'    => Controls_Manager::TEXT,
+				'default' => '#!',
+			)
+		);
+
+	
 		$this->add_control(
 			'mask_image',
 			[
 				'label' => __( 'Mask Image', 'elementor-stv' ),
 				'type' => Controls_Manager::MEDIA,
-        'default' => [
+        		'default' => [
 					'url' => \Elementor\Utils::get_placeholder_image_src(),
 				]
 			]
 		);
 
+		$this->add_control(
+			'action_egg',
+			[
+			  'label' => __( 'Acción', 'elementor-stv' ),
+			  'type' => \Elementor\Controls_Manager::CHOOSE,
+			  'options' => [
+				'link' => [
+				  'title' => __( 'Link', 'elementor-stv' ),
+				  'icon' => 'fa fa-link',
+				],
+				'video' => [
+				  'title' => __( 'Video', 'elementor-stv' ),
+				  'icon' => 'fa fa-play-circle',
+				],
+				'gallery' => [
+				  'title' => __( 'Galeria', 'elementor-stv' ),
+				  'icon' => 'fa fa-arrows-alt',
+				]
+			  ],
+			  'default' => 'link',
+			  'toggle' => true,
+			]
+		);
+
 		$this->end_controls_section();
+
+
+		$this->start_controls_section(
+			'style_section',
+			[
+			  'label' => __( 'Style Section', 'elementor-stv' ),
+			  'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->end_controls_section();
+		
+
 	}
 
 	/**
@@ -152,14 +211,58 @@ class Egg extends Widget_Base {
 	protected function render() {
 		$settings = $this->get_settings_for_display();
 
-		$this->add_inline_editing_attributes( 'title', 'none' );
-		$this->add_inline_editing_attributes( 'description', 'basic' );
-		$this->add_inline_editing_attributes( 'content', 'advanced' );
+		//$this->add_inline_editing_attributes( 'title', 'none' );
+		//$this->add_inline_editing_attributes( 'description', 'basic' );
+		//$this->add_inline_editing_attributes( 'content', 'advanced' );
 		?>
-		<h2 <?php echo $this->get_render_attribute_string( 'title' ); ?><?php echo wp_kses( $settings['title'], array() ); ?></h2>
-		<div <?php echo $this->get_render_attribute_string( 'description' ); ?><?php echo wp_kses( $settings['description'], array() ); ?></div>
-		<div <?php echo $this->get_render_attribute_string( 'content' ); ?><?php echo wp_kses( $settings['content'], array() ); ?></div>
-		<?php
+		<?php 
+		
+		if ( $settings['action_egg'] === 'gallery' ) {
+			
+			?>
+						
+			<div class="col-xs-12">
+
+				<a class="gallery-item noDecoracion" href="<?php echo wp_kses( $settings['mask_image']['url'], array() ); ?>" title="<?php echo wp_kses( $settings['title'], array() ); ?>">
+					<img class="img-responsive burbuja" src="<?php echo wp_kses( $settings['mask_image']['url'], array() ); ?>" alt="<?php echo wp_kses( $settings['title'], array() ); ?>">
+				</a>
+
+			</div>
+
+			<?php
+			
+		}else if ( $settings['action_egg'] === 'video' ) {
+			
+			?>
+						
+			<div class="col-xs-12">
+
+				<a class="gallery-item-video noDecoracion" href="<?php echo wp_kses( $settings['url'], array() ); ?>" title="<?php echo wp_kses( $settings['title'], array() ); ?>">
+					<img class="img-responsive burbuja" src="<?php echo wp_kses( $settings['mask_image']['url'], array() ); ?>" alt="<?php echo wp_kses( $settings['title'], array() ); ?>">
+				</a>
+
+			</div>
+
+
+			<?php
+
+
+		}else{
+			
+			?>
+			
+			<div class="col-xs-12">
+
+				<a class="gallery-item noDecoracion" href="<?php echo wp_kses( $settings['url'], array() ); ?>" title="<?php echo wp_kses( $settings['title'], array() ); ?>">
+					<img class="img-responsive burbuja" src="<?php echo wp_kses( $settings['mask_image']['url'], array() ); ?>" alt="<?php echo wp_kses( $settings['title'], array() ); ?>">
+				</a>
+
+			</div>
+
+			<?php
+
+		}	
+	
 	}
 
 	/**
@@ -172,15 +275,56 @@ class Egg extends Widget_Base {
 	 * @access protected
 	 */
 	protected function _content_template() {
+		
+		// <#
+		// view.addInlineEditingAttributes( 'title', 'none' );
+		// view.addInlineEditingAttributes( 'description', 'basic' );
+		// view.addInlineEditingAttributes( 'content', 'advanced' );
+		// #>
+
+		// <h2 {{{ view.getRenderAttributeString( 'title' ) }}}>{{{ settings.title }}}</h2>
+		// <div {{{ view.getRenderAttributeString( 'description' ) }}}>{{{ settings.description }}}</div>
+		// <div {{{ view.getRenderAttributeString( 'content' ) }}}>{{{ settings.content }}}</div>
+		
 		?>
+
+
 		<#
-		view.addInlineEditingAttributes( 'title', 'none' );
-		view.addInlineEditingAttributes( 'description', 'basic' );
-		view.addInlineEditingAttributes( 'content', 'advanced' );
+		if ( settings.action_egg === 'gallery' ) {
+			#>
+			<div class="col-xs-12">
+
+				<a class="gallery-item noDecoracion" href="{{{ settings.mask_image.url }}}" title="{{{ settings.title }}}">
+					<img class="img-responsive burbuja" src="{{{ settings.mask_image.url }}}" alt="{{{ settings.title }}}">
+				</a>
+
+			</div>
+			<#
+		}else if( settings.action_egg === 'video' ){
+			#>
+			<div class="col-xs-12">
+
+				<a class="gallery-item-video" href="{{{ settings.url }}}" title="{{{ settings.title }}}">
+					<img class="img-responsive burbuja" src="{{{ settings.mask_image.url }}}" alt="{{{ settings.title }}}">
+				</a>
+           
+         	</div>
+			<#
+		}else{
+			#>
+			<div class="col-xs-12">
+
+				<a class="gallery-item noDecoracion" href="{{{ settings.url }}}" title="{{{ settings.title }}}">
+					<img class="img-responsive burbuja" src="{{{ settings.mask_image.url }}}" alt="{{{ settings.title }}}">
+				</a>
+
+			</div>
+			<#
+		}
+
+
 		#>
-		<h2 {{{ view.getRenderAttributeString( 'title' ) }}}>{{{ settings.title }}}</h2>
-		<div {{{ view.getRenderAttributeString( 'description' ) }}}>{{{ settings.description }}}</div>
-		<div {{{ view.getRenderAttributeString( 'content' ) }}}>{{{ settings.content }}}</div>
+		
 		<?php
 	}
 }
