@@ -1,11 +1,10 @@
 (function($){ 
     
-    $('.gallery-item-video').magnificPopup({
-        disableOn: 700,
+$('.gallery-item-video').magnificPopup({
         type: 'iframe',
-        mainClass: 'mfp-fade',
-        removalDelay: 160,
-        preloader: false,
-        fixedContentPos: false
+        gallery:{
+          enabled:true
+        }    
     });
+
 })(jQuery);
