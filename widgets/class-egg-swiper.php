@@ -338,7 +338,7 @@ class EggSwiper extends Widget_Base {
 							<a  class="gallery-item noDecoracion" href="<?php echo wp_kses( $item['mask_image']['url'], array() ); ?>" title="<?php echo wp_kses( $item['title'], array() ); ?>">
 								<div class="gallery-container-img burbuja" style="background-image:url('data:image/svg+xml;base64,<?php echo $svg; ?>');">
 									
-									<img class="img-responsive " src="<?php echo wp_kses( $item['mask_image']['url'], array() ); ?>" alt="<?php echo wp_kses( $settings['title'], array() ); ?>">
+									<img class="img-responsive" src="<?php echo wp_kses( $item['mask_image']['url'], array() ); ?>" alt="<?php echo wp_kses( $settings['title'], array() ); ?>">
 								
 								</div>
 							</a>
@@ -356,7 +356,7 @@ class EggSwiper extends Widget_Base {
 							<a class="gallery-item-video noDecoracion" href="<?php echo wp_kses( $item['url'], array() ); ?>" title="<?php echo wp_kses( $item['title'], array() ); ?>">
 								<div class="gallery-container-img burbuja" style="background-image:url('data:image/svg+xml;base64,<?php echo $svg; ?>');">
 									
-									<img class="img-responsive " src="<?php echo wp_kses( $item['mask_image']['url'], array() ); ?>" alt="<?php echo wp_kses( $settings['title'], array() ); ?>">
+									<img class="img-responsive" src="<?php echo wp_kses( $item['mask_image']['url'], array() ); ?>" alt="<?php echo wp_kses( $settings['title'], array() ); ?>">
 								
 								</div>
 							</a>
@@ -376,7 +376,7 @@ class EggSwiper extends Widget_Base {
 							<a class="gallery-item noDecoracion" href="<?php echo wp_kses( $item['url'], array() ); ?>" title="<?php echo wp_kses( $item['title'], array() ); ?>">
 								<div class="gallery-container-img burbuja" style="background-image:url('data:image/svg+xml;base64,<?php echo $svg; ?>');">
 								
-									<img class="img-responsive " src="<?php echo wp_kses( $item['mask_image']['url'], array() ); ?>" alt="<?php echo wp_kses( $settings['title'], array() ); ?>">
+									<img class="img-responsive" src="<?php echo wp_kses( $item['mask_image']['url'], array() ); ?>" alt="<?php echo wp_kses( $settings['title'], array() ); ?>">
 								
 								</div>
 							</a>
@@ -447,7 +447,9 @@ class EggSwiper extends Widget_Base {
 						<div class="col-xs-12 gallery-stv">
 
 							<a class="gallery-item noDecoracion" href="{{{ item.mask_image.url }}}" title="{{{ item.title }}}">
-								<img style="background-image: url('data:image/svg+xml;base64,{{{ svg }}}'); " class="img-responsive burbuja" src="{{{ item.mask_image.url }}}" alt="{{{ item.title }}}">
+								<div class="gallery-container-img burbuja" style="background-image: url('data:image/svg+xml;base64,{{{ svg }}}');" >		
+									<img class="img-responsive" src="{{{ item.mask_image.url }}}" alt="{{{ item.title }}}">
+								</div>				
 							</a>
 
 						</div>
@@ -457,7 +459,9 @@ class EggSwiper extends Widget_Base {
 						<div class="col-xs-12 gallery-stv">
 
 							<a class="gallery-item-video" href="{{{ item.url }}}" title="{{{ item.title }}}">
-								<img style="background-image:url('data:image/svg+xml;base64,{{{ svg }}}');" class="img-responsive burbuja" src="{{{ item.mask_image.url }}}" alt="{{{ item.title }}}">
+								<div class="gallery-container-img burbuja" style="background-image: url('data:image/svg+xml;base64,{{{ svg }}}');" >		
+									<img class="img-responsive" src="{{{ item.mask_image.url }}}" alt="{{{ item.title }}}">
+								</div>				
 							</a>
 
 						</div>
@@ -467,7 +471,9 @@ class EggSwiper extends Widget_Base {
 						<div class="col-xs-12 gallery-stv">
 
 							<a class="gallery-item noDecoracion" href="{{{ item.url }}}" title="{{{ item.title }}}">
-								<img style="background-image:url('data:image/svg+xml;base64,{{{ svg }}}');" class="img-responsive burbuja" src="{{{ item.mask_image.url }}}" alt="{{{ item.title }}}">
+								<div class="gallery-container-img burbuja" style="background-image: url('data:image/svg+xml;base64,{{{ svg }}}');" >		
+									<img class="img-responsive" src="{{{ item.mask_image.url }}}" alt="{{{ item.title }}}">
+								</div>				
 							</a>
 
 						</div>

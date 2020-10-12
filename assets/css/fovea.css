@@ -387,10 +387,11 @@
   overflow: hidden;
   display: inline-block;
   background-repeat:no-repeat;
-
 }
 
 .gallery-stv img{
   height: 100%;
   width: 100%;
+  clip-path: url(#Graficos);
+  -webkit-clip-path: url(#Graficos);
 }

@@ -284,7 +284,9 @@ class Egg extends Widget_Base {
 			<div class="col-xs-12 gallery-stv">
 				
 				<a  class="gallery-item noDecoracion" href="<?php echo wp_kses( $settings['mask_image']['url'], array() ); ?>" title="<?php echo wp_kses( $settings['title'], array() ); ?>">
-					<img style="background-image:url('data:image/svg+xml;base64,<?php echo $svg; ?>');" class="img-responsive burbuja" src="<?php echo wp_kses( $settings['mask_image']['url'], array() ); ?>" alt="<?php echo wp_kses( $settings['title'], array() ); ?>">
+					<div class="gallery-container-img burbuja" style="background-image:url('data:image/svg+xml;base64,<?php echo $svg; ?>');">		
+						<img class="img-responsive" src="<?php echo wp_kses( $settings['mask_image']['url'], array() ); ?>" alt="<?php echo wp_kses( $settings['title'], array() ); ?>">
+					</div>
 				</a>
 
 			</div>
@@ -298,7 +300,9 @@ class Egg extends Widget_Base {
 			<div class="col-xs-12 gallery-stv">
 				
 				<a class="gallery-item-video noDecoracion" href="<?php echo wp_kses( $settings['url'], array() ); ?>" title="<?php echo wp_kses( $settings['title'], array() ); ?>">
-					<img style="background-image:url('data:image/svg+xml;base64,<?php echo $svg; ?>');" class="img-responsive burbuja" src="<?php echo wp_kses( $settings['mask_image']['url'], array() ); ?>" alt="<?php echo wp_kses( $settings['title'], array() ); ?>">
+					<div class="gallery-container-img burbuja" style="background-image:url('data:image/svg+xml;base64,<?php echo $svg; ?>');">		
+						<img class="img-responsive" src="<?php echo wp_kses( $settings['mask_image']['url'], array() ); ?>" alt="<?php echo wp_kses( $settings['title'], array() ); ?>">
+					</div>
 				</a>
 
 			</div>
@@ -314,7 +318,9 @@ class Egg extends Widget_Base {
 			<div class="col-xs-12 gallery-stv">
 				
 				<a class="gallery-item noDecoracion" href="<?php echo wp_kses( $settings['url'], array() ); ?>" title="<?php echo wp_kses( $settings['title'], array() ); ?>">
-					<img style="background-image:url('data:image/svg+xml;base64,<?php echo $svg; ?>');" class="img-responsive burbuja" src="<?php echo wp_kses( $settings['mask_image']['url'], array() ); ?>" alt="<?php echo wp_kses( $settings['title'], array() ); ?>">
+					<div class="gallery-container-img burbuja" style="background-image:url('data:image/svg+xml;base64,<?php echo $svg; ?>');">		
+						<img class="img-responsive" src="<?php echo wp_kses( $settings['mask_image']['url'], array() ); ?>" alt="<?php echo wp_kses( $settings['title'], array() ); ?>">
+					</div>	
 				</a>
 
 			</div>
@@ -366,7 +372,9 @@ class Egg extends Widget_Base {
 			<div class="col-xs-12 gallery-stv">
 
 				<a class="gallery-item noDecoracion" href="{{{ settings.mask_image.url }}}" title="{{{ settings.title }}}">
-					<img style="background-image: url('data:image/svg+xml;base64,{{{ svg }}}'); " class="img-responsive burbuja" src="{{{ settings.mask_image.url }}}" alt="{{{ settings.title }}}">
+					<div class="gallery-container-img burbuja" style="background-image: url('data:image/svg+xml;base64,{{{ svg }}}');" >		
+						<img class="img-responsive" src="{{{ settings.mask_image.url }}}" alt="{{{ settings.title }}}">
+					</div>
 				</a>
 
 			</div>
@@ -376,7 +384,9 @@ class Egg extends Widget_Base {
 			<div class="col-xs-12 gallery-stv">
 
 				<a class="gallery-item-video" href="{{{ settings.url }}}" title="{{{ settings.title }}}">
-					<img style="background-image:url('data:image/svg+xml;base64,{{{ svg }}}');" class="img-responsive burbuja" src="{{{ settings.mask_image.url }}}" alt="{{{ settings.title }}}">
+					<div class="gallery-container-img burbuja" style="background-image: url('data:image/svg+xml;base64,{{{ svg }}}');" >		
+						<img class="img-responsive" src="{{{ settings.mask_image.url }}}" alt="{{{ settings.title }}}">
+					</div>
 				</a>
            
          	</div>
@@ -386,7 +396,9 @@ class Egg extends Widget_Base {
 			<div class="col-xs-12 gallery-stv">
 
 				<a class="gallery-item noDecoracion" href="{{{ settings.url }}}" title="{{{ settings.title }}}">
-					<img style="background-image:url('data:image/svg+xml;base64,{{{ svg }}}');" class="img-responsive burbuja" src="{{{ settings.mask_image.url }}}" alt="{{{ settings.title }}}">
+					<div class="gallery-container-img burbuja" style="background-image: url('data:image/svg+xml;base64,{{{ svg }}}');" >		
+						<img class="img-responsive" src="{{{ settings.mask_image.url }}}" alt="{{{ settings.title }}}">
+					</div>
 				</a>
 
 			</div>
