@@ -1,6 +1,6 @@
 <?php
 /**
- * Content Egg class.
+ * Content Egg Swiper class.
  *
  * @category   Class
  * @package    ElementorStv
@@ -14,6 +14,7 @@
  * php version 7.3.9
  */
 
+
 namespace ElementorStv\Widgets;
 
 use Elementor\Widget_Base;
@@ -23,11 +24,11 @@ use Elementor\Controls_Manager;
 defined( 'ABSPATH' ) || die();
 
 /**
- * Egg widget class.
+ * EggSwipper widget class.
  *
  * @since 1.0.0
  */
-class Egg extends Widget_Base {
+class EggSwipper extends Widget_Base {
 	/**
 	 * Class constructor.
 	 *
