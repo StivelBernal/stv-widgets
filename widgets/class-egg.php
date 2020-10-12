@@ -40,7 +40,7 @@ class Egg extends Widget_Base {
 		$vers =  STV_DEV_MODE ? time(): false;
 
 		// STYLES
-		wp_register_style( 'stv-pstyle', plugins_url( '/assets/css/magnific-popup.css', ELEMENTOR_STV ), [], '1.0.0' );
+		//wp_register_style( 'stv-pstyle', plugins_url( '/assets/css/magnific-popup.css', ELEMENTOR_STV ), [], '1.0.0' );
 		
 		wp_register_style( 'stv-movement', plugins_url( '/assets/css/fovea.css', ELEMENTOR_STV ), [], $vers );
 		

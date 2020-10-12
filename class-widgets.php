@@ -65,8 +65,9 @@ class Widgets {
 	 * @access private
 	 */
 	private function include_widgets_files() {
-		require_once 'widgets/class-awesomesauce.php';
+		//require_once 'widgets/class-awesomesauce.php';
 		require_once 'widgets/class-egg.php';
+		require_once 'widgets/class-egg-swiper.php';
 
 	}
 
@@ -86,6 +87,9 @@ class Widgets {
 		// \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Widgets\Awesomesauce() );
 
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Widgets\Egg() );
+
+
+		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Widgets\EggSwiper() );
 
 	}
 
