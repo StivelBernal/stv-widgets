@@ -377,13 +377,20 @@
 
 .gallery-stv{
   position: relative;
+  overflow: hidden;
+}
+
+.gallery-stv .gallery-container-img{
+  height:100%;
+  width: 100%;
+  background-size: 100% 100%;
+  overflow: hidden;
+  display: inline-block;
+  background-repeat:no-repeat;
+
 }
 
 .gallery-stv img{
-  background-repeat:no-repeat;
-	background-size:100% 100%;
-  overflow: hidden;
-    height: 100%;
-    width: 100%;
-    display: inline-block;
+  height: 100%;
+  width: 100%;
 }

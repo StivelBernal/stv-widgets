@@ -213,6 +213,20 @@ class EggSwiper extends Widget_Base {
 			]
 		);
 
+		$this->add_control(
+			'slides_number',
+			array(
+				'label'   => __( 'Slides visibles', 'elementor-stv' ),
+				'type'    => Controls_Manager::SELECT,
+				'options' => [ 	'1' => '1',
+								'2' => '2',
+								'3' => '3',
+								'4' => '4',
+								'5' => '5'],
+				'default' => '2',
+			)
+		);
+
 		$this->end_controls_section();
 
 
@@ -305,7 +319,7 @@ class EggSwiper extends Widget_Base {
 
 
 			echo '
-			<div class="swiper-container">
+			<div class="swiper-container-'.$settings['slides_number'].'">
 			
 				<div class="swiper-wrapper">';
 
@@ -322,7 +336,11 @@ class EggSwiper extends Widget_Base {
 						<div class="col-xs-12 gallery-stv">
 							
 							<a  class="gallery-item noDecoracion" href="<?php echo wp_kses( $item['mask_image']['url'], array() ); ?>" title="<?php echo wp_kses( $item['title'], array() ); ?>">
-								<img style="background-image:url('data:image/svg+xml;base64,<?php echo $svg; ?>');" class="img-responsive burbuja" src="<?php echo wp_kses( $item['mask_image']['url'], array() ); ?>" alt="<?php echo wp_kses( $item['title'], array() ); ?>">
+								<div class="gallery-container-img burbuja" style="background-image:url('data:image/svg+xml;base64,<?php echo $svg; ?>');">
+									
+									<img class="img-responsive " src="<?php echo wp_kses( $item['mask_image']['url'], array() ); ?>" alt="<?php echo wp_kses( $settings['title'], array() ); ?>">
+								
+								</div>
 							</a>
 
 						</div>
@@ -336,7 +354,11 @@ class EggSwiper extends Widget_Base {
 						<div class="col-xs-12 gallery-stv">
 							
 							<a class="gallery-item-video noDecoracion" href="<?php echo wp_kses( $item['url'], array() ); ?>" title="<?php echo wp_kses( $item['title'], array() ); ?>">
-								<img style="background-image:url('data:image/svg+xml;base64,<?php echo $svg; ?>');" class="img-responsive burbuja" src="<?php echo wp_kses( $item['mask_image']['url'], array() ); ?>" alt="<?php echo wp_kses( $item['title'], array() ); ?>">
+								<div class="gallery-container-img burbuja" style="background-image:url('data:image/svg+xml;base64,<?php echo $svg; ?>');">
+									
+									<img class="img-responsive " src="<?php echo wp_kses( $item['mask_image']['url'], array() ); ?>" alt="<?php echo wp_kses( $settings['title'], array() ); ?>">
+								
+								</div>
 							</a>
 
 						</div>
@@ -352,7 +374,11 @@ class EggSwiper extends Widget_Base {
 						<div class="col-xs-12 gallery-stv">
 							
 							<a class="gallery-item noDecoracion" href="<?php echo wp_kses( $item['url'], array() ); ?>" title="<?php echo wp_kses( $item['title'], array() ); ?>">
-								<img style="background-image:url('data:image/svg+xml;base64,<?php echo $svg; ?>');" class="img-responsive burbuja" src="<?php echo wp_kses( $item['mask_image']['url'], array() ); ?>" alt="<?php echo wp_kses( $settings['title'], array() ); ?>">
+								<div class="gallery-container-img burbuja" style="background-image:url('data:image/svg+xml;base64,<?php echo $svg; ?>');">
+								
+									<img class="img-responsive " src="<?php echo wp_kses( $item['mask_image']['url'], array() ); ?>" alt="<?php echo wp_kses( $settings['title'], array() ); ?>">
+								
+								</div>
 							</a>
 
 						</div>
@@ -408,7 +434,7 @@ class EggSwiper extends Widget_Base {
 			</svg>`);
 
 			
-			<div class="swiper-container">
+			<div class="swiper-container-{{{settings.slides_number}}}">
 			
 				<div class="swiper-wrapper">
 					
