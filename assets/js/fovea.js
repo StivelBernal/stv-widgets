@@ -7,4 +7,16 @@ $('.gallery-item-video').magnificPopup({
         }    
     });
 
-})(jQuery);
+    
+    
+    
+  })(jQuery);
+   
+  
+  window.onload = function(){
+
+    var mySwiper = new Swiper('.swiper-container', {
+        // Optional parameters
+        loop: true,
+      })
+  }
