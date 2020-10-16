@@ -87,7 +87,7 @@ class Egg extends Widget_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'fa fa-weixin';
+		return 'fa fa-eye';
 	}
 
 	/**
