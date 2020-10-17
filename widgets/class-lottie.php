@@ -40,7 +40,8 @@ class LOttie extends Widget_Base {
 		$vers =  STV_DEV_MODE ? time(): false;
 		
 		//SCRIPTS
-		wp_enqueue_script( 'lottie', plugins_url( '/assets/lottie/lottie.js', ELEMENTOR_STV ), [], '1.0.0');
+		wp_enqueue_script( 'lottie', get_theme_file_uri().'/app/js/lottie.min.js', [], '1.0.0', false);
+		//wp_enqueue_script( 'lottie', plugins_url( '/assets/lottie.min.js', ELEMENTOR_STV ), [], '1.0.0');
 		
 	}
 
@@ -105,7 +106,7 @@ class LOttie extends Widget_Base {
 	 * Enqueue styles.
 	 */
 	public function get_style_depends() {
-		return array( 'lottie' );
+		return array( 'lottie');
 	}
 
 	/**
@@ -134,16 +135,16 @@ class LOttie extends Widget_Base {
 				'default' => 'Animation1',
 			)
 		);
-/*
+
 		$this->add_control(
-			'json',
+			'height_animation',
 			array(
-				'label'   => __( 'Json', 'elementor-stv' ),
-				'type'    => Controls_Manager::TEXTAREA,
-				'default' => __( '{}', 'elementor-stv' ),
+				'label'   => __( 'Alto de la animacion en px', 'elementor-stv' ),
+				'type'    => Controls_Manager::NUMBER,
+				'default' => __( '200', 'elementor-stv' ),
 			)
 		);
-*/
+
 		$this->add_control(
 			'url',
 			array(
@@ -173,19 +174,19 @@ class LOttie extends Widget_Base {
 		
 		?>
 
-			<script>
+			<div style="width: 100%; height: <?php echo $settings['height_animation']; ?>px" id="<?php echo $settings['id_animation']; ?>"></div>
+			
+			<script type="text/javascript">
 
 			lottie.loadAnimation({
                 container: document.getElementById('<?php echo $settings['id_animation']; ?>'),
                 path: '<?php echo $settings['url']; ?>', 
-                renderer: 'canvas', 
+                renderer: 'svg', 
                 loop: true,
                 autoplay: true, 
             })
 
 			</script>
-
-			<div id="<?php echo $settings['id_animation']; ?>"></div>
 
 		<?php
 
@@ -208,21 +209,20 @@ class LOttie extends Widget_Base {
 		?>
 
 		<#
-
+				
 			lottie.loadAnimation({
 				container: document.getElementById(settings['id_animation']),
 				path: settings['url'], 
-				renderer: 'canvas', 
+				renderer: 'svg', 
 				loop: true,
 				autoplay: true, 
 			})
-
+	
 		
 		#>
 	
-		?>
 
-		<div id="{{{settings['id_animation']}}}"></div>
+		<div style=" width: 100%; height: {{{settings.height_animation}}}px;" id="{{{settings['id_animation']}}}"></div>
 
 		<?php
 	}

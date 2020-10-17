@@ -68,7 +68,7 @@ class Widgets {
 		//require_once 'widgets/class-awesomesauce.php';
 		require_once 'widgets/class-egg.php';
 		require_once 'widgets/class-egg-swiper.php';
-
+		require_once 'widgets/class-lottie.php';
 	}
 
 	/**
@@ -88,8 +88,10 @@ class Widgets {
 
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Widgets\Egg() );
 
-
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Widgets\EggSwiper() );
+
+
+		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Widgets\Lottie() );
 
 	}
 
