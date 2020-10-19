@@ -297,7 +297,7 @@ class EggSwiper extends Widget_Base {
 		if ( $settings['list'] ) {
 
 			echo '
-			<div class="swiper-container-'.$settings['slides_number'].'">
+			<div class="swiper-stv swiper-container-'.$settings['slides_number'].'">
 			
 				<div class="swiper-wrapper">';
 

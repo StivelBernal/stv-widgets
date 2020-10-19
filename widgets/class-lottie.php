@@ -27,7 +27,7 @@ defined( 'ABSPATH' ) || die();
  *
  * @since 1.0.0
  */
-class LOttie extends Widget_Base {
+class Lottie extends Widget_Base {
 	/**
 	 * Class constructor.
 	 *

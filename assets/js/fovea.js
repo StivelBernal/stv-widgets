@@ -1,16 +1,25 @@
 (function($){ 
-    
-$('.gallery-item-video').magnificPopup({
+
+  $(document).ready(function() {
+
+    $('.gallery-item-video').magnificPopup({
         type: 'iframe',
         gallery:{
           enabled:true
         }    
     });
+    
+    if( window.screen.width < 767 ){
+      
+      var menu = document.querySelector('#header .menu-container').classList.add('collapse');
+      
+    }
+    
+});
 
     
     
-    
-  })(jQuery);
+})(jQuery);
    
   
   window.onload = function(){

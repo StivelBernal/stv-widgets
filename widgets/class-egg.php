@@ -47,7 +47,7 @@ class Egg extends Widget_Base {
 		//SCRIPTS
 		wp_enqueue_script( 'stv-popup', plugins_url( '/assets/magnific-popup/jquery.magnific-popup.js', ELEMENTOR_STV ), ['jquery'], $vers);
 	
-		wp_enqueue_script( 'stv-scripts-g', plugins_url( '/assets/js/fovea.js', ELEMENTOR_STV ), ['jquery'], $vers);
+		wp_enqueue_script( 'stv-scripts-g', plugins_url( '/assets/js/fovea.js', ELEMENTOR_STV ), ['jquery', 'stv-popup'], $vers);
 		
 	}
 
@@ -112,7 +112,7 @@ class Egg extends Widget_Base {
 	 * Enqueue styles.
 	 */
 	public function get_style_depends() {
-		return array( 'stv-movement' );
+		return array( 'stv-movement', 'stv-popup', 'stv-scripts-g' );
 	}
 
 	/**
