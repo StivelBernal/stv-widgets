@@ -26,42 +26,141 @@
 
     var mySwiper1 = new Swiper('.swiper-container-1', {
         // Optional parameters
-        loop: true,
-        speed: 400,
         spaceBetween: 10,
-        slidesPerView: 1
+        slidesPerView: 1,
+        speed: 400,
+        loop: true,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        autoplay: {
+            delay: 2000,
+            disableOnInteraction: false
+        },
+        speed: 500,
+        breakpoints: {
+            200: {
+              slidesPerView: 1
+            },
+            700: {
+              slidesPerView: 2
+            },
+            1000: {
+              slidesPerView: 3
+            }
+        }
     })
 
     var mySwiper2 = new Swiper('.swiper-container-2', {
-      // Optional parameters
-      loop: true,
-      speed: 400,
       spaceBetween: 10,
-      slidesPerView: 2
+      slidesPerView: 2,
+      speed: 400,
+      loop: true,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      autoplay: {
+          delay: 2000,
+          disableOnInteraction: false
+      },
+      speed: 500,
+      breakpoints: {
+          200: {
+            slidesPerView: 1
+          },
+          700: {
+            slidesPerView: 2
+          },
+          1000: {
+            slidesPerView: 2
+          }
+      }
     })
 
     var mySwiper3 = new Swiper('.swiper-container-3', {
       // Optional parameters
-      loop: true,
-      speed: 400,
       spaceBetween: 10,
-      slidesPerView: 3
+      slidesPerView: 3,
+      speed: 400,
+      loop: true,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      autoplay: {
+          delay: 2000,
+          disableOnInteraction: false
+      },
+      speed: 500,
+      breakpoints: {
+          200: {
+            slidesPerView: 1
+          },
+          700: {
+            slidesPerView: 2
+          },
+          1000: {
+            slidesPerView: 3
+          }
+      }
     })  
 
     var mySwiper4 = new Swiper('.swiper-container-4', {
       // Optional parameters
-      loop: true,
-      speed: 400,
       spaceBetween: 10,
-      slidesPerView: 4
+      slidesPerView: 4,
+      speed: 400,
+      loop: true,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      autoplay: {
+          delay: 2000,
+          disableOnInteraction: false
+      },
+      speed: 500,
+      breakpoints: {
+          200: {
+            slidesPerView: 1
+          },
+          700: {
+            slidesPerView: 2
+          },
+          1000: {
+            slidesPerView: 4
+          }
+      }
     })
 
     var mySwiper5 = new Swiper('.swiper-container-5', {
       // Optional parameters
-      loop: true,
+      spaceBetween: 10,
+      slidesPerView: 5,
       speed: 400,
-      spaceBetween: 100,
-      slidesPerView: 5
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      loop: true,
+      autoplay: {
+          delay: 2000,
+          disableOnInteraction: false
+      },
+      speed: 500,
+      breakpoints: {
+          200: {
+            slidesPerView: 1
+          },
+          700: {
+            slidesPerView: 2
+          },
+          1000: {
+            slidesPerView: 5
+          }
+      }
     })
 
   }
