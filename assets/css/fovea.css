@@ -395,5 +395,25 @@
   width: 100%;
   opacity: 0;
 }
+.swiper-stv{
+  position: relative;
+}
 
+.button-next{
+  right: -3%;
+}
 
+.button-prev{
+  left: -3%;
+}
+
+.button-next, .button-prev{
+  z-index: 60;
+  top: 25%;
+  position: absolute;
+
+}
+.button-next svg, .button-prev svg{
+  height: 300px;
+  width: 100px;
+}

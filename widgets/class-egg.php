@@ -262,10 +262,14 @@ class Egg extends Widget_Base {
 
 		if ( $settings['action_egg'] === 'video' ) {  
 			
-			$play = '<image width="110%" height="110%" xlink:href="/wp-content/themes/fovea/app/imagenes/play.svg"/>
-		';
-							
+			/*$play = '
+			<image width="110%" height="110%" xlink:href="/wp-content/themes/fovea/app/imagenes/play.svg"/>
+		';*/
 
+		$play = '<g style="transform: translate(-10%, -8%);">
+					<circle class="st0" cx="182.23" cy="126.15" r="40"/>
+					<polygon class="st1" points="172.23,109.47 172.23,144.83 197.23,126.54 	"/>
+				</g>';
 		}
 
 		
@@ -281,6 +285,8 @@ class Egg extends Widget_Base {
 						}
 						.cls-3{clip-path:url(#clip-path);}
 						.cls-4{fill:none;}
+						.st0{opacity:0.47;}
+						.st1{fill: '.$settings['color_borde3'].';}
 						</style>
 
 						<linearGradient id="linear-gradient" y1="113.2" x2="304.92" y2="113.2" gradientUnits="userSpaceOnUse">
@@ -300,13 +306,13 @@ class Egg extends Widget_Base {
 							<g class="cls-3">
 								<image width="961" height="638" transform="translate(0 3.69) scale(0.3)" xlink:href="'.$settings['mask_image']['url'].'"/>
 							</g>
-							<g>
-								'.$play.'
-							</g>
-
+							
 							<path class="cls-4" d="M258.8,129.18S253.42-1.52,117,2.6c0,0-62.82,4.76-98.05,70.44,0,0-32.81,60.38-5.7,98.05,0,0,9,22.89,50.47,22.34,42-.53,97.61.74,132.86.34C234.81,193.31,263.1,164.86,258.8,129.18Z" transform="translate(18.52)"/>
-					
+							
 						</g>
+					</g>
+					<g style="fill: '.$settings['color_fondo'].';">
+					'.$play.'
 					</g>
 				</svg>';
 

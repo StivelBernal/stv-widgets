@@ -307,8 +307,13 @@ class EggSwiper extends Widget_Base {
 
 					if ( $item['action_egg'] === 'video' ) { 
 						
-						$play = '<image width="110%" height="110%" xlink:href="/wp-content/themes/fovea/app/imagenes/play.svg"/>
-					';
+						
+								
+					$play = '
+					<g style="transform: translate(-10%, -8%);">
+						<circle class="st0" cx="182.23" cy="126.15" r="40"/>
+						<polygon style="fill: '.$settings['color_borde3'].';" class="st1" points="172.23,109.47 172.23,144.83 197.23,126.54 	"/>
+					</g>';
 										
 			
 					}
@@ -325,6 +330,8 @@ class EggSwiper extends Widget_Base {
 									}
 									.cls-3{clip-path:url(#clip-path);}
 									.cls-4{fill:none;}
+									.st0{opacity:0.47;}
+								
 									</style>
 
 									<linearGradient id="linear-gradient" y1="113.2" x2="304.92" y2="113.2" gradientUnits="userSpaceOnUse">
@@ -344,7 +351,7 @@ class EggSwiper extends Widget_Base {
 										<g class="cls-3">
 											<image width="961" height="638" transform="translate(0 3.69) scale(0.3)" xlink:href="'.$item['mask_image']['url'].'"/>
 										</g>
-										<g>
+										<g style="fill: '.$settings['color_fondo'].';">
 											'.$play.'
 										</g>
 
@@ -412,6 +419,8 @@ class EggSwiper extends Widget_Base {
 						<?php
 
 					}	
+
+					
 				
 					echo '</div>';
 				}
@@ -419,8 +428,32 @@ class EggSwiper extends Widget_Base {
 				echo '
 				</div>
 
-				<div class="swiper-button-prev"></div>
-    			<div class="swiper-button-next"></div>
+				<div class="button-prev">
+					<svg version="1.1" id="Capa_2_xA0_Imagen_1_" opacity="0.9"
+								xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 372 282"
+								style="enable-background:new 0 0 372 282;" xml:space="preserve">
+						<style type="text/css">
+							.st0{fill:#006CB9;stroke:#FFFFFF;stroke-miterlimit:10;}
+						</style>
+						<path class="st0" d="M184.96,82.79c0,0-50.01,45.94,2.88,93.04c0,0,21.49,15.31,32.22,6.23c10.79-9.14,4.58-14.88,3.31-19.05
+							c-1.21-4.13-21.9-35.11-6.19-67.79c0,0,4.36-19.66-8.85-21.72C208.33,73.5,198.2,71.04,184.96,82.79L184.96,82.79z"/>
+					</svg>
+					
+				</div>
+				<div class="button-next">
+					<svg version="1.1" id="Capa_2_xA0_Imagen_1_" opacity="0.9"
+							xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 372 282"
+							style="enable-background:new 0 0 372 282;" xml:space="preserve">
+						<style type="text/css">
+							.st0{fill:#006CB9;stroke:#FFFFFF;stroke-miterlimit:10;}
+						</style>
+				
+							<path class="st0" d="M202.22,92.96c0,0,50.01,45.94-2.88,93.04c0,0-21.49,15.31-32.22,6.23c-10.79-9.14-4.58-14.88-3.31-19.05
+							c1.21-4.13,21.9-35.11,6.19-67.79c0,0-4.36-19.66,8.85-21.72C178.85,83.67,188.98,81.21,202.22,92.96L202.22,92.96z"/>
+						
+					</svg>
+					
+				</div>
 			</div>';
 		}
 	

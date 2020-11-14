@@ -20,7 +20,6 @@
     
     
 })(jQuery);
-   
   
   window.onload = function(){
 
@@ -31,8 +30,8 @@
         speed: 400,
         loop: true,
         navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
+          nextEl: '.button-next',
+          prevEl: '.button-prev',
         },
         autoplay: {
             delay: 2000,
@@ -58,8 +57,8 @@
       speed: 400,
       loop: true,
       navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        nextEl: '.button-next',
+        prevEl: '.button-prev',
       },
       autoplay: {
           delay: 2000,
@@ -86,8 +85,8 @@
       speed: 400,
       loop: true,
       navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        nextEl: '.button-next',
+        prevEl: '.button-prev',
       },
       autoplay: {
           delay: 2000,
@@ -114,8 +113,8 @@
       speed: 400,
       loop: true,
       navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        nextEl: '.button-next',
+        prevEl: '.button-prev',
       },
       autoplay: {
           delay: 2000,
@@ -141,8 +140,8 @@
       slidesPerView: 5,
       speed: 400,
       navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        nextEl: '.button-next',
+        prevEl: '.button-prev',
       },
       loop: true,
       autoplay: {
