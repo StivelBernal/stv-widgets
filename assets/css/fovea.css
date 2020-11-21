@@ -400,11 +400,11 @@
 }
 
 .button-next{
-  right: -3%;
+  right: 2%;
 }
 
 .button-prev{
-  left: -3%;
+  left: 0%;
 }
 
 .button-next, .button-prev{
@@ -415,5 +415,5 @@
 }
 .button-next svg, .button-prev svg{
   height: 50px;
-  width: 50px;
+  transform: scale(3);
 }
