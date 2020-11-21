@@ -236,6 +236,67 @@ class Egg extends Widget_Base {
 			)
 		);
 
+		$this->add_control(
+			'tamaño_imagen',
+			array(
+				'label'   => __( 'Tamaño imagen', 'elementor-stv' ),
+				'type'    => Controls_Manager::SLIDER,
+				'size_units' => [ 'px' ],
+				'range' => [
+					'px' => [
+						'min' => 0,
+						'max' => 1000,
+						'step' => 5,
+					],
+				],
+				'default' => [
+					'unit' => 'px',
+					'size' => 50,
+				],
+			)
+		);
+
+		$this->add_control(
+			'x_imagen',
+			array(
+				'label'   => __( 'Posición horizontal imagen', 'elementor-stv' ),
+				'type'    => Controls_Manager::SLIDER,
+				'size_units' => [ 'px' ],
+				'range' => [
+					'px' => [
+						'min' => -250,
+						'max' => 250,
+						'step' => 5,
+					],
+				],
+				'default' => [
+					'unit' => 'px',
+					'size' => 0,
+				],
+			)
+		);
+
+
+		$this->add_control(
+			'y_imagen',
+			array(
+				'label'   => __( 'Posición vertical imagen', 'elementor-stv' ),
+				'type'    => Controls_Manager::SLIDER,
+				'size_units' => [ 'px' ],
+				'range' => [
+					'px' => [
+						'min' => -250,
+						'max' => 250,
+						'step' => 5,
+					],
+				],
+				'default' => [
+					'unit' => 'px',
+					'size' => 0,
+				],
+			)
+		);
+
 		$this->end_controls_section();
 		
 
@@ -304,7 +365,7 @@ class Egg extends Widget_Base {
 						<g id="Graficos">
 							<path class="cls-2" style="fill: '.$settings['color_fondo'].';" d="M258.8,129.18S253.42-1.52,117,2.6c0,0-62.82,4.76-98.05,70.44,0,0-32.81,60.38-5.7,98.05,0,0,9,22.89,50.47,22.34,42-.53,97.61.74,132.86.34C234.81,193.31,263.1,164.86,258.8,129.18Z" transform="translate(18.52)"/>
 							<g class="cls-3">
-								<image width="961" height="638" transform="translate(0 3.69) scale(0.3)" xlink:href="'.$settings['mask_image']['url'].'"/>
+								<image width="'.$settings['tamaño_imagen']['size'].'" height="'.$settings['tamaño_imagen']['size'].'" transform="translate('.$settings['x_imagen']['size'].' '.$settings['y_imagen']['size'].') scale(1)" xlink:href="'.$settings['mask_image']['url'].'"/>
 							</g>
 							
 							<path class="cls-4" d="M258.8,129.18S253.42-1.52,117,2.6c0,0-62.82,4.76-98.05,70.44,0,0-32.81,60.38-5.7,98.05,0,0,9,22.89,50.47,22.34,42-.53,97.61.74,132.86.34C234.81,193.31,263.1,164.86,258.8,129.18Z" transform="translate(18.52)"/>
@@ -415,7 +476,7 @@ class Egg extends Widget_Base {
 							<g id=\"Graficos\">
 								<path class=\"cls-2\" style=\"fill: ${settings['color_fondo']};\" d=\"M258.8,129.18S253.42-1.52,117,2.6c0,0-62.82,4.76-98.05,70.44,0,0-32.81,60.38-5.7,98.05,0,0,9,22.89,50.47,22.34,42-.53,97.61.74,132.86.34C234.81,193.31,263.1,164.86,258.8,129.18Z\" transform=\"translate(18.52)\"/>
 								<g class=\"cls-3\">
-									<image width=\"961\" height=\"638\" transform=\"translate(0 3.69) scale(0.3)\" xlink:href=\"${settings.mask_image.url}\"/>
+									<image width=\"${settings['tamaño_imagen'].size}\" height=\"${settings['tamaño_imagen'].size}\" transform=\"translate(${settings['x_imagen'].size} ${settings['y_imagen'].size}) scale(1)\" xlink:href=\"${settings.mask_image.url}\"/>
 								</g>
 
 								<path class=\"cls-4\" d=\"M258.8,129.18S253.42-1.52,117,2.6c0,0-62.82,4.76-98.05,70.44,0,0-32.81,60.38-5.7,98.05,0,0,9,22.89,50.47,22.34,42-.53,97.61.74,132.86.34C234.81,193.31,263.1,164.86,258.8,129.18Z\" transform=\"translate(18.52)\"/>
