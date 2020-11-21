@@ -251,7 +251,7 @@ class Egg extends Widget_Base {
 				],
 				'default' => [
 					'unit' => 'px',
-					'size' => 50,
+					'size' => 270,
 				],
 			)
 		);
@@ -271,7 +271,7 @@ class Egg extends Widget_Base {
 				],
 				'default' => [
 					'unit' => 'px',
-					'size' => 0,
+					'size' => 10,
 				],
 			)
 		);
@@ -292,7 +292,7 @@ class Egg extends Widget_Base {
 				],
 				'default' => [
 					'unit' => 'px',
-					'size' => 0,
+					'size' => -30,
 				],
 			)
 		);
