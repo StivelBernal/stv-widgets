@@ -360,7 +360,9 @@ class EggSwiper extends Widget_Base {
 		if ( $settings['list'] ) {
 
 			echo '
-			<div class="swiper-stv swiper-container-'.$settings['slides_number'].'">
+			<div class="swipper-over">
+			  
+			  <div class="swiper-stv swiper-container-'.$settings['slides_number'].'">
 			 	
 				<div class="swiper-wrapper">';
 
@@ -493,33 +495,36 @@ class EggSwiper extends Widget_Base {
 				</div>
 
 				
-
-			</div>
-			
-			<div class="button-prev">
-				<svg version="1.1" id="Capa_2_xA0_Imagen_1_" opacity="0.9"
+				
+				</div>
+					
+				<div class="btte button-prev">
+					<svg version="1.1" id="Capa_2_xA0_Imagen_1_" opacity="0.9"
+								xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 372 282"
+								style="enable-background:new 0 0 372 282;" xml:space="preserve">
+							<style type="text/css">
+								.st0{fill:#006CB9;stroke:#FFFFFF;stroke-miterlimit:10;}
+							</style>
+							<path class="st0" d="M152.5,92.2c0,0-50,45.9,2.9,93c0,0,21.5,15.3,32.2,6.2c10.8-9.1,4.6-14.9,3.3-19.1
+								c-1.2-4.1-21.9-35.1-6.2-67.8c0,0,4.4-19.7-8.9-21.7C175.9,82.9,165.8,80.5,152.5,92.2L152.5,92.2z"/>
+					</svg>
+					
+				</div>
+				<div class="btte button-next">
+					<svg version="1.1" id="Capa_2_xA0_Imagen_1_" opacity="0.9"
 							xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 372 282"
 							style="enable-background:new 0 0 372 282;" xml:space="preserve">
-						<style type="text/css">
-							.st0{fill:#006CB9;stroke:#FFFFFF;stroke-miterlimit:10;}
-						</style>
-						<path class="st0" d="M152.5,92.2c0,0-50,45.9,2.9,93c0,0,21.5,15.3,32.2,6.2c10.8-9.1,4.6-14.9,3.3-19.1
-							c-1.2-4.1-21.9-35.1-6.2-67.8c0,0,4.4-19.7-8.9-21.7C175.9,82.9,165.8,80.5,152.5,92.2L152.5,92.2z"/>
-				</svg>
-				
+							<style type="text/css">
+								.st0{fill:#006CB9;stroke:#FFFFFF;stroke-miterlimit:10;}
+							</style>
+						<path class="st0" d="M250.5,92.2c0,0,50,45.9-2.9,93c0,0-21.5,15.3-32.2,6.2c-10.8-9.1-4.6-14.9-3.3-19.1
+						c1.2-4.1,21.9-35.1,6.2-67.8c0,0-4.4-19.7,8.9-21.7C227.2,82.9,237.3,80.5,250.5,92.2L250.5,92.2z"/>
+					</svg>
+					
+				</div>
+		
 			</div>
-			<div class="button-next">
-				<svg version="1.1" id="Capa_2_xA0_Imagen_1_" opacity="0.9"
-						xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 372 282"
-						style="enable-background:new 0 0 372 282;" xml:space="preserve">
-						<style type="text/css">
-							.st0{fill:#006CB9;stroke:#FFFFFF;stroke-miterlimit:10;}
-						</style>
-					<path class="st0" d="M250.5,92.2c0,0,50,45.9-2.9,93c0,0-21.5,15.3-32.2,6.2c-10.8-9.1-4.6-14.9-3.3-19.1
-					c1.2-4.1,21.9-35.1,6.2-67.8c0,0-4.4-19.7,8.9-21.7C227.2,82.9,237.3,80.5,250.5,92.2L250.5,92.2z"/>
-				</svg>
-				
-			</div>';
+			';
 		}
 	
 	}
